@@ -1,0 +1,32 @@
+# Naomi Osaka & Serena Williams
+## Twitter Sentiment Analysis Project
+
+### Background
+
+## Goal
+* build my own corpus
+* use sentiment analysis on Twitter data
+* create reproducible research (i.e. a notebook leading others through this project)
+
+### Data Collection
+took a long time to scrape tweets
+I thought I'd be able to get them all within a couple of minutes, but it was taking a long time
+While I was waiting I realized that a lot of tweets might overlap, as they referenced both women
+so I was going to have separate databases for naomi osaka and serena williams, but I don't know if that's going to be possible
+so I might just have to do an English tweets database and a Japanese tweets database
+
+okay, I just checked and it took me about 20 minutes to collect 8000 tweets, and they all lasted about the span of an hour
+I don't think I really considered just how much data there was going to be
+this was a worldwide event, people from across the globe were watching and tweeting about this
+so I'll need to be a bit more specific with my time intervals
+
+don't know how to do that, so... I think I'll just leave it running all night?...
+or maybe I'll leave it running whi
+
+ok, I've simply implemented a counter in the code to control the max number of tweets that I get
+I'll do the actual collection later
+looks like the best bet will be to 1) get naomi osaka tweets 2) get serena williams tweets 3) join duplicates 4) remove repeats 5) remove non-english tweets 6) remove links to news articles tc 7) remove tweets less than a certain number of characters
+
+### Data Pre-Processing
+I'm going to focus on a small English corpus for now. Other Twitter projects I've looked at have analyzed millions of tweets, and I've only got 30k. So I'll consider this to be a pilot analysis.
+I'm going to join the English tweet tables on their tweet IDs.
