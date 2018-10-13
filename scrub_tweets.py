@@ -80,14 +80,14 @@ df['tweet_text'].replace(' ', np.nan, inplace=True)
 df.dropna(inplace=True)
 df.reset_index(drop=True)
 
-df['tweet_text'] = df['tweet_text'].apply(lambda x: nltk.word_tokenize(x))
+df['processed_tweet'] = df['tweet_text'].apply(lambda x: nltk.word_tokenize(x))
 
 stop = stopwords.words("english")
-df['tweet_text'] = df['tweet_text'].apply(lambda x: [word for word in x if word not in (stop) and len(word) > 1])
+df['processed_tweet'] = df['processed_tweet'].apply(lambda x: [word for word in x if word not in (stop) and len(word) > 1])
 
-df['tweet_text'] = df['tweet_text'].apply(lambda x: [Word(word).lemmatize() for word in x])
+df['processed_tweet'] = df['processed_tweet'].apply(lambda x: [Word(word).lemmatize() for word in x])
 
-df['tweet_text'] = df['tweet_text'].apply(lambda x: [word for word in x if len(word) > 1])
+df['processed_tweet'] = df['processed_tweet'].apply(lambda x: [word for word in x if len(word) > 1])
 
 print("Done.")
 print("Your cleaned data:")
